@@ -81,9 +81,9 @@ HPLlib       = $(LIBdir)/libhpl.a
 # header files,  MPlib  is defined  to be the name of  the library to be 
 # used. The variable MPdir is only used for defining MPinc and MPlib.
 #
-MPdir        = /mnt/scratch/sw/openmpi-1.3.1-gcc
-MPinc        = 
-MPlib        = -Wl,-rpath,$(MPdir)/lib
+# MPdir        = /mnt/scratch/sw/openmpi-1.3.1-gcc
+# MPinc        = 
+# MPlib        = -Wl,-rpath,$(MPdir)/lib
 #
 # ----------------------------------------------------------------------
 # - Linear Algebra library (BLAS or VSIPL) -----------------------------
@@ -142,7 +142,7 @@ F2CDEFS      = -DHPL_CALL_CBLAS -DHPL_DETAILED_TIMING
 # ----------------------------------------------------------------------
 #
 HPL_INCLUDES = -I$(INCdir) -I$(INCdir)/$(ARCH) $(LAinc) $(MPinc)
-HPL_LIBS     = $(HPLlib) $(LAlib) $(MPlib) -lm
+HPL_LIBS     = $(HPLlib) $(LAlib) $(MPlib) -lm -L/home/snake0/hpcc-GVM/lib/ -lcblas -lblas 
 #
 # - Compile time options -----------------------------------------------
 #
@@ -170,7 +170,7 @@ CC           = mpicc
 CCNOOPT      = $(HPL_DEFS) 
 CCFLAGS      = $(HPL_DEFS) -O2 -DRA_SANDIA_NOPT=1
 #
-LINKER       = mpicc
+LINKER       = mpif77
 LINKFLAGS    = 
 #
 ARCHIVER     = ar
