@@ -92,9 +92,9 @@ HPLlib       = $(LIBdir)/libhpl.a
 # header files,  LAlib  is defined  to be the name of  the library to be 
 # used. The variable LAdir is only used for defining LAinc and LAlib.
 #
-LAdir        = /mnt/scratch/sw/atlas-gcc
-LAinc        = 
-LAlib        = -L$(LAdir)/lib -lcblas -latlas -L/mnt/scratch/sw/intel/11.1.069/lib/intel64 -Wl,-rpath,/mnt/scratch/sw/intel/11.1.069/lib/intel64 -lirc -lm
+#LAdir        = /mnt/scratch/sw/atlas-gcc
+#LAinc        = 
+#LAlib        = -L$(LAdir)/lib -lcblas -latlas -L/mnt/scratch/sw/intel/11.1.069/lib/intel64 -Wl,-rpath,/mnt/scratch/sw/intel/11.1.069/lib/intel64 -lirc -lm
 #
 # ----------------------------------------------------------------------
 # - F77 / C interface --------------------------------------------------
