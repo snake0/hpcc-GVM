@@ -262,23 +262,23 @@ main(int argc, char *argv[]) {
   // fprintf( outputFile, "End of StarFFT section.\n" );
   // END_IO( myRank, outputFile );
 
-  /* -------------------------------------------------- */
-  /*                      SingleFFT                     */
-  /* -------------------------------------------------- */
+  // /* -------------------------------------------------- */
+  // /*                      SingleFFT                     */
+  // /* -------------------------------------------------- */
 
-  MPI_Barrier( MPI_COMM_WORLD );
+  // MPI_Barrier( MPI_COMM_WORLD );
 
-  BEGIN_IO( myRank, outFname, outputFile);
-  fprintf( outputFile, "Begin of SingleFFT section.\n" );
-  END_IO( myRank, outputFile );
+  // BEGIN_IO( myRank, outFname, outputFile);
+  // fprintf( outputFile, "Begin of SingleFFT section.\n" );
+  // END_IO( myRank, outputFile );
 
-  if (params.RunSingleFFT) HPCC_SingleFFT( &params );
+  // if (params.RunSingleFFT) HPCC_SingleFFT( &params );
 
-  time( &currentTime );
-  BEGIN_IO( myRank, outFname, outputFile);
-  fprintf( outputFile,"Current time (%ld) is %s\n",(long)currentTime,ctime(&currentTime));
-  fprintf( outputFile, "End of SingleFFT section.\n" );
-  END_IO( myRank, outputFile );
+  // time( &currentTime );
+  // BEGIN_IO( myRank, outFname, outputFile);
+  // fprintf( outputFile,"Current time (%ld) is %s\n",(long)currentTime,ctime(&currentTime));
+  // fprintf( outputFile, "End of SingleFFT section.\n" );
+  // END_IO( myRank, outputFile );
 
   // /* -------------------------------------------------- */
   // /*                  Latency/Bandwidth                 */
@@ -298,21 +298,21 @@ main(int argc, char *argv[]) {
   // fprintf( outputFile, "End of LatencyBandwidth section.\n" );
   // END_IO( myRank, outputFile );
 
-  // /* -------------------------------------------------- */
-  // /*                        HPL                         */
-  // /* -------------------------------------------------- */
+  /* -------------------------------------------------- */
+  /*                        HPL                         */
+  /* -------------------------------------------------- */
 
-  // BEGIN_IO( myRank, outFname, outputFile);
-  // fprintf( outputFile, "Begin of HPL section.\n" );
-  // END_IO( myRank, outputFile );
+  BEGIN_IO( myRank, outFname, outputFile);
+  fprintf( outputFile, "Begin of HPL section.\n" );
+  END_IO( myRank, outputFile );
 
-  // if (params.RunHPL) HPL_main( argc, argv, &params.HPLrdata, &params.Failure );
+  if (params.RunHPL) HPL_main( argc, argv, &params.HPLrdata, &params.Failure );
 
-  // time( &currentTime );
-  // BEGIN_IO( myRank, outFname, outputFile);
-  // fprintf( outputFile,"Current time (%ld) is %s\n",(long)currentTime,ctime(&currentTime));
-  // fprintf( outputFile, "End of HPL section.\n" );
-  // END_IO( myRank, outputFile );
+  time( &currentTime );
+  BEGIN_IO( myRank, outFname, outputFile);
+  fprintf( outputFile,"Current time (%ld) is %s\n",(long)currentTime,ctime(&currentTime));
+  fprintf( outputFile, "End of HPL section.\n" );
+  END_IO( myRank, outputFile );
 
   hpcc_end:
 
